@@ -10,6 +10,32 @@ CHECKURL="http://ip.03k.org"
 #OUT="pppoe"
 #CONF END
 . /etc/profile
+
+if [ x"$1" = x ]; then
+        domain=example.com
+else
+        domain="$1"
+fi
+
+if [ x"$2" = x ]; then
+        host=home
+else
+        host="$2"
+fi
+
+if [ x"$3" = x ]; then
+        API_ID=12345
+else
+        API_ID="$3"
+fi
+
+if [ x"$4" = x ]; then
+        API_Token=abcdefghijklmnopq2333333
+else
+        API_Token="$4"
+fi
+
+
 date
 if (echo $CHECKURL |grep -q "://");then
 IPREX='([0-9]{1,2}|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]{1,2}|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]{1,2}|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]{1,2}|1[0-9][0-9]|2[0-4][0-9]|25[0-5])'
